@@ -16,6 +16,5 @@ public class MainEquals {
         System.out.println("Test avec p2.hashCode : " + p2.hashCode() );
        // System.out.println("Test avec p2.hashCode : " + 2 >> 1  ?);
 
-
     }
 }
