@@ -3,11 +3,20 @@ public class Person {
     private String nom ;
     private String prenom ;
     private String matricule ;
+
+    private double age;
+    public Person(String nom, String prenom, String matricule, double age) {
+        this.nom = nom ;
+        this.prenom = prenom ;
+        this.matricule = matricule ;
+        this.age = age ;
+    }
+
     public Person(String nom, String prenom, String matricule) {
         this.nom = nom ;
         this.prenom = prenom ;
         this.matricule = matricule ;
-    }
+     }
     public String getNom() {
         return nom;
     }
@@ -23,6 +32,15 @@ public class Person {
     public String getMatricule() {
         return matricule;
     }
+
+    public double getAge() {
+        return age;
+    }
+
+    public void setAge(double age) {
+        this.age = age;
+    }
+
     public void setMatricule(String matricule) {
         this.matricule = matricule;
     }

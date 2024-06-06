@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class ItemController {
 
@@ -18,6 +20,14 @@ public class ItemController {
     }
     @GetMapping("/all-items")
     public Item getItems(){
-        return itemService.retreiveAll();
+        return itemService.retrieveAll();
+    }
+
+    @GetMapping("/get-all-itmes-db")
+    public List<Item> getAllItems(){
+        List<Item> items= itemService.retrieveAllItems();
+        for(Item item:items){
+            item.setValue(item.getValue()* item.getQuantity());        }
+        return itemService.retrieveAllItems();
     }
 }

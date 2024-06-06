@@ -3,7 +3,6 @@ package com.mockito.unittesting.controllers;
 import com.mockito.unittesting.business.ItemsService;
 import com.mockito.unittesting.model.Item;
 import org.junit.jupiter.api.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -37,7 +36,7 @@ public class ItemControllerTest {
 
     @Test
     public void test_get_all_item() throws Exception {
-        when(itemServiceMock.retreiveAll()).thenReturn(new Item(2,"Bag",2,3));
+        when(itemServiceMock.retrieveAll()).thenReturn(new Item(2,"Bag",2,3));
         RequestBuilder request = MockMvcRequestBuilders.get("/all-items")
                 .accept(MediaType.APPLICATION_JSON);
         MvcResult result = mockMvc.perform(request)
