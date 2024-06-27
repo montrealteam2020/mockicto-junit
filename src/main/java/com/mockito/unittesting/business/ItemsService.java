@@ -18,6 +18,9 @@ public class ItemsService {
     }
 
     public List<Item> retrieveAllItems(){
-       return itemRepository.findAll();
+       List<Item> items= itemRepository.findAll();
+        for(Item item:items)
+            item.setValue(item.getQuantity()*item.getPrice());
+       return items;
     }
 }

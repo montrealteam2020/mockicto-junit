@@ -23,11 +23,8 @@ public class ItemController {
         return itemService.retrieveAll();
     }
 
-    @GetMapping("/get-all-itmes-db")
+    @GetMapping("/get-all-items-db")
     public List<Item> getAllItems(){
-        List<Item> items= itemService.retrieveAllItems();
-        for(Item item:items){
-            item.setValue(item.getValue()* item.getQuantity());        }
         return itemService.retrieveAllItems();
     }
 }
